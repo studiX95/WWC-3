@@ -41,23 +41,30 @@ header {
         align-items: center;
         width: 90%;
     }
-    
-    .logo {
-        width: 200px;
-        margin: 0 auto;
-        font-family: @font-bold;
-        font-size: 2.6rem;
-        text-align: right;
-        color: #555;
-        padding: 3.5rem;
-        background-image: url('../images/logo.png');
-        background-repeat: no-repeat;
-        background-position: center left 3.5rem;
+    a {
         
-        @media all and (min-width: 768px) {
-            padding-left: 4.5rem;
+        text-decoration: none;
+        
+        .logo {
+            width: 200px;
+            margin: 0 auto;
+            font-family: @font-bold;
+            font-size: 2.6rem;
+            text-align: right;
+            color: #555;
+            padding: 3.5rem;
+            background-image: url('../images/logo.png');
+            background-repeat: no-repeat;
+            background-position: center left 3.5rem;
+
+            @media all and (min-width: 768px) {
+                font-size: 1.8rem;
+                padding-left: 0;
+                width: 185px;
+            }
         }
     }
+
     
     .open-menu {
         width: 100%;
@@ -214,6 +221,10 @@ header {
         &:active {
             color: #222;
             background-color: #fff;
+        }
+        
+        &:hover {
+            cursor: pointer;
         }
         
         @media all and (min-width: 768px) {
@@ -458,6 +469,10 @@ header {
                 background-color: #fff;
             }
             
+            &:hover {
+                cursor: pointer;
+            }
+            
             @media all and (min-width: 768px) {
                height: 60px;
                width: 170px;
@@ -595,6 +610,7 @@ header {
         }
         
         button {
+            height: 30px;
             width: 133px;
             margin: 4rem 0;
             font-family: @font-bold;
@@ -607,12 +623,19 @@ header {
             background-image: url('../images/pointer.png');
             background-repeat: no-repeat;
             background-position: center right;
+            box-sizing: border-box;
             
             @media all and (min-width: 768px) {
                 font-size: 1.6rem;
-                width: 170px;
+                width: 160px;
                 background-size: 18px;
             }
+            
+            &:hover {
+                cursor: pointer;
+                color: #222;
+                background-image: url('../images/hover-btn.png');
+            } 
         }
         
     }//div
@@ -901,6 +924,11 @@ header {
                 border-color: #5aa354;
             }
             
+            &:hover {
+                cursor: pointer;
+            }
+            
+            
             @media all and (min-width: 768px) {
                 font-size: 1.8rem;
             }
@@ -970,8 +998,18 @@ footer {
         
         div {
             width: 300px;
-            min-height: 430px;
             margin: 0 1rem;
+            
+            &:nth-child(2), &:nth-child(3) {
+                &:hover a {
+                    color: #7cc576 !important;
+                }  
+            }
+            
+            @media all and (min-width: 992px) {
+                min-height: 430px;
+            }
+            
             ul {
                 @media all and (min-width: 992px) {
                     width: 300px;
@@ -1044,7 +1082,11 @@ footer {
         }//ul.contact-us
         
         ul.posts {
-
+            
+            &:hover a {
+                color: #7cc576;
+            }
+            
             a {
                 display: flex;
                 font-family: @font-regular;
@@ -1122,6 +1164,16 @@ footer {
         
         ul.tweets {
 
+            &:hover a {
+                color: #7cc576 !important;
+            }
+            
+            margin-bottom: 4rem;
+            
+            @media all and (min-width: 992px) {
+                margin-bottom: 2rem;
+            }
+            
             a {
                 display: flex;
                 font-family: @font-regular;
@@ -1132,7 +1184,7 @@ footer {
 
                 &:nth-child(1) {
                     &:before {
-                        width: 38px;
+                        width: 48px;
                         height: 30px;
                         content: '';
                         display: block;
@@ -1144,7 +1196,7 @@ footer {
 
                 &:nth-child(2) {
                     &:before {
-                        width: 38px;
+                        width: 48px;
                         height: 30px;
                         content: '';
                         display: inline-block;
@@ -1159,7 +1211,8 @@ footer {
                 padding-left: 2rem;
                 
                 span {
-                    font-family: 'RobotoSlab-Bold';   
+                    font-family: 'RobotoSlab-Bold';
+                    color: #ececec !important;
                 }
             }
                 
@@ -1202,8 +1255,51 @@ footer {
         .socials {
             margin: 2rem 0;
             
-            img {
+            display: flex;
+            
+            .social {
                 margin: 0 .5rem;
+                height: 45px;
+                width: 45px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                
+                &:nth-child(1) {
+                   background-image: url('../images/twwiter-1.png');
+                    
+                    &:hover {
+                        cursor: pointer;
+                        background-image: url('../images/twitter.png');
+                    } 
+                }
+                
+                &:nth-child(2) {
+                   background-image: url('../images/fb-1.png');
+                    
+                    &:hover {
+                        cursor: pointer;
+                        background-image: url('../images/fb.png');
+                    } 
+                }
+                
+                &:nth-child(3) {
+                   background-image: url('../images/p-1.png');
+                    
+                    &:hover {
+                        cursor: pointer;
+                        background-image: url('../images/p.png');
+                    } 
+                }
+                
+                &:nth-child(4) {
+                   background-image: url('../images/gplus-1.png');
+                    
+                    &:hover {
+                        cursor: pointer;
+                        background-image: url('../images/gplus.png');
+                    } 
+                }
             }
         }
     } 

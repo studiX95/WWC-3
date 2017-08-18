@@ -30,7 +30,10 @@ body {
     width: 90%;
   }
 }
-header .logo {
+header a {
+  text-decoration: none;
+}
+header a .logo {
   width: 200px;
   margin: 0 auto;
   font-family: 'Montserrat-Bold';
@@ -43,8 +46,10 @@ header .logo {
   background-position: center left 3.5rem;
 }
 @media all and (min-width: 768px) {
-  header .logo {
-    padding-left: 4.5rem;
+  header a .logo {
+    font-size: 1.8rem;
+    padding-left: 0;
+    width: 185px;
   }
 }
 header .open-menu {
@@ -196,6 +201,9 @@ header .menu ul a li {
 .baner button:active {
   color: #222;
   background-color: #fff;
+}
+.baner button:hover {
+  cursor: pointer;
 }
 @media all and (min-width: 768px) {
   .baner button {
@@ -420,6 +428,9 @@ header .menu ul a li {
   color: #222;
   background-color: #fff;
 }
+.relax div.relax-right button:hover {
+  cursor: pointer;
+}
 @media all and (min-width: 768px) {
   .relax div.relax-right button {
     height: 60px;
@@ -545,6 +556,7 @@ header .menu ul a li {
   padding-top: 2rem;
 }
 .project div button {
+  height: 30px;
   width: 133px;
   margin: 4rem 0;
   font-family: 'Montserrat-Bold';
@@ -557,13 +569,19 @@ header .menu ul a li {
   background-image: url('../images/pointer.png');
   background-repeat: no-repeat;
   background-position: center right;
+  box-sizing: border-box;
 }
 @media all and (min-width: 768px) {
   .project div button {
     font-size: 1.6rem;
-    width: 170px;
+    width: 160px;
     background-size: 18px;
   }
+}
+.project div button:hover {
+  cursor: pointer;
+  color: #222;
+  background-image: url('../images/hover-btn.png');
 }
 .culture {
   min-height: 100vh;
@@ -816,6 +834,9 @@ header .menu ul a li {
   background-color: #fff;
   border-color: #5aa354;
 }
+.contact div button:hover {
+  cursor: pointer;
+}
 @media all and (min-width: 768px) {
   .contact div button {
     font-size: 1.8rem;
@@ -877,8 +898,16 @@ footer .footer-top {
 }
 footer .footer-top div {
   width: 300px;
-  min-height: 430px;
   margin: 0 1rem;
+}
+footer .footer-top div:nth-child(2):hover a,
+footer .footer-top div:nth-child(3):hover a {
+  color: #7cc576 !important;
+}
+@media all and (min-width: 992px) {
+  footer .footer-top div {
+    min-height: 430px;
+  }
 }
 @media all and (min-width: 992px) {
   footer .footer-top div ul {
@@ -931,6 +960,9 @@ footer .footer-top ul.contact-us a:nth-child(3):before {
 footer .footer-top ul.contact-us li {
   line-height: 3rem;
   padding-left: 2rem;
+}
+footer .footer-top ul.posts:hover a {
+  color: #7cc576;
 }
 footer .footer-top ul.posts a {
   display: flex;
@@ -989,6 +1021,17 @@ footer .footer-top ul.posts li {
   line-height: 3rem;
   padding-left: 2rem;
 }
+footer .footer-top ul.tweets {
+  margin-bottom: 4rem;
+}
+footer .footer-top ul.tweets:hover a {
+  color: #7cc576 !important;
+}
+@media all and (min-width: 992px) {
+  footer .footer-top ul.tweets {
+    margin-bottom: 2rem;
+  }
+}
 footer .footer-top ul.tweets a {
   display: flex;
   font-family: 'RobotoSlab-Regular';
@@ -998,7 +1041,7 @@ footer .footer-top ul.tweets a {
   margin: 2rem 0;
 }
 footer .footer-top ul.tweets a:nth-child(1):before {
-  width: 38px;
+  width: 48px;
   height: 30px;
   content: '';
   display: block;
@@ -1007,7 +1050,7 @@ footer .footer-top ul.tweets a:nth-child(1):before {
   background-position: center center;
 }
 footer .footer-top ul.tweets a:nth-child(2):before {
-  width: 38px;
+  width: 48px;
   height: 30px;
   content: '';
   display: inline-block;
@@ -1021,6 +1064,7 @@ footer .footer-top ul.tweets a li {
 }
 footer .footer-top ul.tweets a li span {
   font-family: 'RobotoSlab-Bold';
+  color: #ececec !important;
 }
 footer .footer-bottom {
   display: flex;
@@ -1054,7 +1098,41 @@ footer .footer-bottom .rights {
 }
 footer .footer-bottom .socials {
   margin: 2rem 0;
+  display: flex;
 }
-footer .footer-bottom .socials img {
+footer .footer-bottom .socials .social {
   margin: 0 .5rem;
+  height: 45px;
+  width: 45px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+footer .footer-bottom .socials .social:nth-child(1) {
+  background-image: url('../images/twwiter-1.png');
+}
+footer .footer-bottom .socials .social:nth-child(1):hover {
+  cursor: pointer;
+  background-image: url('../images/twitter.png');
+}
+footer .footer-bottom .socials .social:nth-child(2) {
+  background-image: url('../images/fb-1.png');
+}
+footer .footer-bottom .socials .social:nth-child(2):hover {
+  cursor: pointer;
+  background-image: url('../images/fb.png');
+}
+footer .footer-bottom .socials .social:nth-child(3) {
+  background-image: url('../images/p-1.png');
+}
+footer .footer-bottom .socials .social:nth-child(3):hover {
+  cursor: pointer;
+  background-image: url('../images/p.png');
+}
+footer .footer-bottom .socials .social:nth-child(4) {
+  background-image: url('../images/gplus-1.png');
+}
+footer .footer-bottom .socials .social:nth-child(4):hover {
+  cursor: pointer;
+  background-image: url('../images/gplus.png');
 }
